@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Reserva de vehicle</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <script>
+    Office.onReady(function () {
+      document.getElementById("crearCorreu").onclick = function () {
+        Office.context.mailbox.item.body.setSelectedDataAsync(\`
+          <p>Benvolgut/da,</p>
+          <p>Sol·licito la reserva d’un vehicle per al desplaçament programat el proper dilluns a les 9h.</p>
+          <p>Destinació: Barcelona</p>
+          <p>Gràcies,</p>
+          <p>[El teu nom]</p>
+        \`, { coercionType: Office.CoercionType.Html }, function (asyncResult) {
+          if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
+            console.log("Plantilla inserida correctament.");
+          } else {
+            console.error("Error:", asyncResult.error.message);
+          }
+        });
+      };
+    });
+  </script>
+</head>
+<body>
+  <h3>Reserva de vehicle</h3>
+  <button id="crearCorreu">Inserir plantilla al cos del correu</button>
+</body>
+</html>
