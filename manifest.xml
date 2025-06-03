@@ -8,8 +8,7 @@
   <DefaultLocale>ca-ES</DefaultLocale>
   <DisplayName DefaultValue="Correu reserva Vehicle"/>
   <Description DefaultValue="Botó per crear correus de reserva de vehicle"/>
-  <IconUrl DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_32.png"/>
-  <SupportUrl DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/suport.html"/>
+  <IconUrl DefaultValue="https://uquopiambenito.github.io/Reserva/car_32.png"/>
   <Hosts>
     <Host Name="Mailbox"/>
   </Hosts>
@@ -23,7 +22,8 @@
       <bt:Url id="taskPaneUrl" DefaultValue="https://uquopiambenito.github.io/Reserva/reserva_auto.html"/>
     </bt:Urls>
   </Resources>
-  <VersionOverrides V1="1.0.0.0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0">
+  <VersionOverrides V1="1.0.0.0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+                                xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">>
     <Requirements>
       <bt:Sets DefaultMinVersion="1.5">
         <bt:Set Name="Mailbox"/>
@@ -42,9 +42,9 @@
                   <Description resid="buttonDescription"/>
                 </Supertip>
                 <Icon>
-                  <bt:Image size="16" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_16.png"/>
-                  <bt:Image size="32" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_32.png"/>
-                  <bt:Image size="80" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_80.png"/>
+                  <bt:Image size="16" DefaultValue="https://uquopiambenito.github.io/Reserva/car_16.png"/>
+                  <bt:Image size="32" DefaultValue="https://uquopiambenito.github.io/Reserva/car_32.png"/>
+                  <bt:Image size="80" DefaultValue="https://uquopiambenito.github.io/Reserva/car_80.png"/>
                 </Icon>
                 <Action xsi:type="ShowTaskpane">
                   <SourceLocation resid="taskPaneUrl"/>
