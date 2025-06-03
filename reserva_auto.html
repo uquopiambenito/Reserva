@@ -1,22 +1,35 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Reserva de vehicle</title>
+  <title>Plantilla de correu</title>
   <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
   <script>
     Office.onReady(function () {
-      document.getElementById("crearCorreu").onclick = function () {
-        Office.context.mailbox.item.body.setSelectedDataAsync(\`
-          <p>Benvolgut/da,</p>
-          <p>Sol·licito la reserva d’un vehicle per al desplaçament programat el proper dilluns a les 9h.</p>
-          <p>Destinació: Barcelona</p>
-          <p>Gràcies,</p>
-          <p>[El teu nom]</p>
-        \`, { coercionType: Office.CoercionType.Html }, function (asyncResult) {
+      // Office is ready
+      document.getElementById("inserirBtn").onclick = function () {
+        const plantillaText = `
+			<p style="font-weight: 400;">Hola Sira,</p>
+			<p style="font-weight: 400;">&nbsp;</p>
+			<p style="font-weight: 400;">Solicito la reserva de un veh&iacute;culo compartido con la siguiente informaci&oacute;n:</p>
+			<p style="font-weight: 400;">&nbsp;</p>
+			<p style="font-weight: 400;">- Nombre: <span style="color: #999999;">[Nombre completo]</span></p>
+			<p style="font-weight: 400;">- Fecha de uso:<span style="color: #999999;"> [dd/mm/aaaa]</span></p>
+			<p style="font-weight: 400;">- Hora estimada de salida: <span style="color: #999999;">[hh:mm]</span></p>
+			<p style="font-weight: 400;">- Hora estimada de regreso: <span style="color: #999999;">[hh:mm]</span></p>
+			<p style="font-weight: 400;">- Trayecto previsto:<span style="color: #999999;"> [Origen &ndash; Destino]</span></p>
+			<p style="font-weight: 400;">- Motivo del desplazamiento: <span style="color: #999999;">[Reuni&oacute;n, visita a cliente, etc.]</span></p>
+			<p style="font-weight: 400;">&nbsp;</p>
+			<p style="font-weight: 400;">Quedo a la espera de confirmaci&oacute;n.</p>
+			<p style="font-weight: 400;">&nbsp;</p>
+			<p style="font-weight: 400;">Gracias,&nbsp;</p>
+        `;
+
+        Office.context.mailbox.item.body.setSelectedDataAsync(plantillaText, { coercionType: Office.CoercionType.Text }, function (asyncResult) {
           if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
             console.log("Plantilla inserida correctament.");
           } else {
-            console.error("Error:", asyncResult.error.message);
+            console.error("Error inserint la plantilla:", asyncResult.error.message);
           }
         });
       };
@@ -24,7 +37,7 @@
   </script>
 </head>
 <body>
-  <h3>Reserva de vehicle</h3>
-  <button id="crearCorreu">Inserir plantilla al cos del correu</button>
+  <h3>Plantilla de correu corporatiu</h3>
+  <button id="inserirBtn">Inserir plantilla</button>
 </body>
 </html>

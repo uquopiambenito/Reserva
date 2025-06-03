@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:type="MessageCompose">
+  <Id>c7614769-14a1-4384-9971-b814b3619eb8</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>BENITO</ProviderName>
+  <DefaultLocale>ca-ES</DefaultLocale>
+  <DisplayName DefaultValue="Correu reserva Vehicle"/>
+  <Description DefaultValue="Botó per crear correus de reserva de vehicle"/>
+  <IconUrl DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_32.png"/>
+  <SupportUrl DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/suport.html"/>
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+  <Requirements>
+    <Sets DefaultMinVersion="1.5">
+      <Set Name="Mailbox"/>
+    </Sets>
+  </Requirements>
+  <Resources>
+    <bt:Urls xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
+      <bt:Url id="taskPaneUrl" DefaultValue="https://uquopiambenito.github.io/Reserva/reserva_auto.html"/>
+    </bt:Urls>
+  </Resources>
+  <VersionOverrides V1="1.0.0.0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0">
+    <Requirements>
+      <bt:Sets DefaultMinVersion="1.5">
+        <bt:Set Name="Mailbox"/>
+      </bt:Sets>
+    </Requirements>
+    <Hosts>
+      <Host xsi:type="Mailbox">
+        <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+          <OfficeTab id="TabNewMessage">
+            <Group id="groupId">
+              <Label resid="groupLabel"/>
+              <Control xsi:type="Button" id="crearPlantillaButton">
+                <Label resid="buttonLabel"/>
+                <Supertip>
+                  <Title resid="buttonLabel"/>
+                  <Description resid="buttonDescription"/>
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_16.png"/>
+                  <bt:Image size="32" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_32.png"/>
+                  <bt:Image size="80" DefaultValue="https://benitourban.sharepoint.com/sites/Dpt.Persones/Documentos%20compartidos/PlantillaOutlook/car_80.png"/>
+                </Icon>
+                <Action xsi:type="ShowTaskpane">
+                  <SourceLocation resid="taskPaneUrl"/>
+                </Action>
+              </Control>
+            </Group>
+          </OfficeTab>
+        </ExtensionPoint>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:ShortStrings>
+        <bt:String id="groupLabel" DefaultValue="Plantilles"/>
+        <bt:String id="buttonLabel" DefaultValue="Reserva vehicle"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="buttonDescription" DefaultValue="Inserta la plantilla per sol·licitar un vehicle."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>
