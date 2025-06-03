@@ -23,7 +23,7 @@
     </bt:Urls>
   </Resources>
   <VersionOverrides V1="1.0.0.0" xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
-                                xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">>
+                                xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0">
     <Requirements>
       <bt:Sets DefaultMinVersion="1.5">
         <bt:Set Name="Mailbox"/>
